@@ -2,7 +2,7 @@
 ==================================
 
 ## 1. Preprocessing the data
-run Hindi_data.prep.py on the Hindi NLI dataset to process the data files and split it into train, test and validation files.
+run Hindi_data_prep.py on the Hindi NLI dataset to process the data files and split it into train, test and validation files.
 
 ## 2. Run fine tuned-roberta mnli model 
 

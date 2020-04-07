@@ -1,10 +1,10 @@
 # Natural Language Inference on Hindi MNLI Data Set
 ==================================
 
-## Preprocessing the data
+## 1. Preprocessing the data
 
 
-## Run fine tuned-roberta mnli model 
+## 2. Run fine tuned-roberta mnli model 
 
 Convert data into bpe format by running the multiprocessing_bpe_encoder.py file with this command.
 python multiprocessing_bpe_encoder.py --encoder-json encoder.json --vocab-bpe vocab.bpe --inputs "sentences_train.txt" --outputs "train.input0.bpe" --workers 1 --keep-empty

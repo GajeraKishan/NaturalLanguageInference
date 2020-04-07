@@ -1,4 +1,10 @@
-##To run fine tuned-roberta mnli model 
+# Natural Language Inference on Hindi MNLI Data Set
+==================================
+
+## 1. Preprocessing the data
+
+
+## 2. Run fine tuned-roberta mnli model 
 
 Convert data into bpe format by running the multiprocessing_bpe_encoder.py file with this command.
 ```

@@ -12,16 +12,16 @@ python multiprocessing_bpe_encoder.py --encoder-json encoder.json --vocab-bpe vo
 
 python multiprocessing_bpe_encoder.py --encoder-json encoder.json --vocab-bpe vocab.bpe --inputs "sentences_val.txt" --outputs "dev.input0.bpe" --workers 1 --keep-empty
 ```
-##preprocess the train and validation bpe files by running this command.
+Preprocess the train and validation bpe files by running this command.
 data and add it to the fairseq dict.txt
 ```
 fairseq-preprocess --only-source --trainpref "train.input0.bpe" --validpref "dev.input0.bpe" --destdir "train-bin/input0" --workers 60 --srcdict dict.txt
 ```
-preprocess the train and validation label files by running this command.
+Preprocess the train and validation label files by running this command.
 ```
 fairseq-preprocess --only-source --trainpref "labels_train.txt" --validpref "labels_val.txt" --destdir "train-bin/label" --workers 60
 ```
-fine-tune hypermarameters of the pretrained roberta-mnli model by running the following command.
+Fine-tune hypermarameters of the pretrained roberta-mnli model by running the following command.
 ```
 python train.py train-bin/ \
     --restore-file model.pt \

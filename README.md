@@ -1,24 +1,22 @@
-# Natural Language Inference on Hindi MNLI Data Set
-==================================
-
-## 1. Preprocessing the data
-
-
-## 2. Run fine tuned-roberta mnli model 
+##To run fine tuned-roberta mnli model 
 
 Convert data into bpe format by running the multiprocessing_bpe_encoder.py file with this command.
+```
 python multiprocessing_bpe_encoder.py --encoder-json encoder.json --vocab-bpe vocab.bpe --inputs "sentences_train.txt" --outputs "train.input0.bpe" --workers 1 --keep-empty
 
 python multiprocessing_bpe_encoder.py --encoder-json encoder.json --vocab-bpe vocab.bpe --inputs "sentences_val.txt" --outputs "dev.input0.bpe" --workers 1 --keep-empty
-
-preprocess the train and validation bpe files by running this command.
+```
+##preprocess the train and validation bpe files by running this command.
 data and add it to the fairseq dict.txt
+```
 fairseq-preprocess --only-source --trainpref "train.input0.bpe" --validpref "dev.input0.bpe" --destdir "train-bin/input0" --workers 60 --srcdict dict.txt
-
+```
 preprocess the train and validation label files by running this command.
+```
 fairseq-preprocess --only-source --trainpref "labels_train.txt" --validpref "labels_val.txt" --destdir "train-bin/label" --workers 60
-
+```
 fine-tune hypermarameters of the pretrained roberta-mnli model by running the following command.
+```
 python train.py train-bin/ \
     --restore-file model.pt \
     --max-positions 512 \
@@ -41,7 +39,7 @@ python train.py train-bin/ \
     --truncate-sequence \
     --find-unused-parameters \
     --update-freq 16
-
+```
 
 
 

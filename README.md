@@ -4,13 +4,20 @@
 ## 1. Preprocessing the data
 run Hindi_data_prep.py on the Hindi NLI dataset to process the data files and split it into train, test and validation files.
 
-## 2. Run fine tuned-roberta mnli model 
-
+## 2. Run fine tuned model 
+For Roberta
 Convert data into bpe format by running the multiprocessing_bpe_encoder.py file with this command.
 ```
 python multiprocessing_bpe_encoder.py --encoder-json encoder.json --vocab-bpe vocab.bpe --inputs "sentences_train.txt" --outputs "train.input0.bpe" --workers 1 --keep-empty
 
 python multiprocessing_bpe_encoder.py --encoder-json encoder.json --vocab-bpe vocab.bpe --inputs "sentences_val.txt" --outputs "dev.input0.bpe" --workers 1 --keep-empty
+```
+for XLM-R
+Convert data into bpe format by running the spm_encoder.py file with this command.
+```
+python spm_encoder.py --inputs "sentences_train.txt" --outputs "train.input0.spm" --workers 1 --keep-empty
+
+python spm_encoder.py --inputs "/content/drive/My Drive/XLMR_XNLI/sentences_val_xnli.txt" --outputs "dev.input0.spm" --workers 1 --keep-empty
 ```
 Preprocess the train and validation bpe files by running this command.
 data and add it to the fairseq dict.txt

@@ -13,7 +13,7 @@ python multiprocessing_bpe_encoder.py --encoder-json encoder.json --vocab-bpe vo
 python multiprocessing_bpe_encoder.py --encoder-json encoder.json --vocab-bpe vocab.bpe --inputs "sentences_val.txt" --outputs "dev.input0.bpe" --workers 1 --keep-empty
 ```
 for XLM-R
-Convert data into bpe format by running the spm_encoder.py file with this command.
+Convert data into sentencepiece format by running the spm_encoder.py file with this command.
 ```
 python spm_encoder.py --inputs "sentences_train.txt" --outputs "train.input0.spm" --workers 1 --keep-empty
 

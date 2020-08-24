@@ -1,6 +1,7 @@
 # Natural Language Inference on Hindi MNLI Data Set
 ==================================
-
+In this project we build a tool that performs Natural Language Inference on Hindi Data. We used pretrained Language Transformers that have been trained on English Data. We the fine tune these transformers on two Hindi NLI Datasets and assess its performance. The Language tranformers that we use are RoBERTa, RobERTa-mnli, and XLMR.
+ 
 ## 1. Preprocessing the data
 run Hindi_data_prep.py on the Hindi NLI dataset to process the data files and split it into train, test and validation files.
 
